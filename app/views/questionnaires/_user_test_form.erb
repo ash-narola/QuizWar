@@ -1,0 +1,7 @@
+<%= form_with(model: users_questionnaires, url: url, local: true) do |form| %>
+  <% questionnaire.questions.each do |question| %>    
+    <%= f.text_field :question, value: question.question, disabled: true %>
+  
+  <% end %>
+  <%= form.submit 'Save' %>
+<% end %>

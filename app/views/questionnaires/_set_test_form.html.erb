@@ -1,0 +1,4 @@
+<%= form_with(model: @questionnaire, url: url, local: true) do |form| %>
+  <%= render 'set_test_questionnaire_form', form: form %>
+  <%= form.submit 'Save' %>
+<% end %>

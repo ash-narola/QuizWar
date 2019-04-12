@@ -1,0 +1,12 @@
+<%= form.text_field :name, placeholder: 'Name of test', class: 'form-control' %>  
+<div class="row">
+  <div class="col-lg-12">
+    <div class="sub_tasks_form">
+      <%= link_to_add_association '+ Add question', form, :questions, partial: 'set_test_question_form', data: { 'association-insertion-method': 'after' } %>
+      <%= form.fields_for :questions do |question| 
+            render 'set_test_question_form', f: question
+          end %>
+    </div>
+  </div>
+</div>
+        

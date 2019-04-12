@@ -1,0 +1,10 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.text_field :question, placeholder: "Add Question " %>
+  
+    <%= link_to_add_association '+ Add answer', f, :answers, partial: 'set_test_answer_form', data: { 'association-insertion-method': 'after' } %>
+  </div>
+    <%= f.fields_for :answers do |answer| %>
+      <%= render 'set_test_question_form', f: answer %>
+    <% end %>
+</div>

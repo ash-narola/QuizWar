@@ -1,1 +1,13 @@
 <%# add navigation links to this file %>
+<% if user_signed_in? %>
+  <li class="nav-item">
+    <%= link_to 'Dashboard', questionnaires_dashboard_path, class: "nav-link" %>
+  </li>
+  
+  <% if current_user.role == 'quiz_setter' %>
+    <li class="nav-item">
+      <%= link_to 'Set Test', questionnaires_set_test_path, class: "nav-link" %>
+    </li>
+  <% end %>
+<% end %>
+
