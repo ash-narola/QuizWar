@@ -18,13 +18,20 @@ class QuestionnairesController < ApplicationController
     q.save!
   end
   
+  def show_score
+
+  end
+  
+  
   def prepare_test
     @user_answered_questionnaire = current_user.user_answered_questionnaires.new(questionnaire: @questionnaire)
   end
   
   def submit_test
     u = @user_answered_questionnaire = current_user.user_answered_questionnaires.new(user_answered_questionnaire_params)
+    u.questionnaire = @questionnaire
     u.save!
+    redirect_to show_score_path
   end
   
   private
