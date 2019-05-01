@@ -10,10 +10,12 @@
 <%= form_with(model: @user_answered_questionnaire, url: users_questionnaire_submit_path(@user, @questionnaire), local: true) do |form| %>
   <% @user_answered_questionnaire.questionnaire.questions.each_with_index do |question,index| %>    
     <%= index + 1 %>. <%= question.question %>
-    <%= form.fields_for :user_questionnaire_answers, @user_answered_questionnaire.user_questionnaire_answers.build do |questionnaire_answer| %>
+
+    <%= form.fields_for :user_questionnaire_answers, 
+    @user_answered_questionnaire.user_questionnaire_answers.build do |questionnaire_answer| %>
       <% question.answers.each do |answer| %>
         <br>
-        <%= questionnaire_answer.radio_button :answer_id, answer.answer %>
+        <%= questionnaire_answer.radio_button :answer_id, answer.id %>
         <%= questionnaire_answer.hidden_field :question_id, value: question.id %>
         <!-- <%#= form.hidden_field , value: question.id %> -->
         <%= answer.answer %> 

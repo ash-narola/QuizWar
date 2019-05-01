@@ -1,0 +1,9 @@
+<% @valid_ans_id.each do |id| %>
+  <% @user_ans_id.each do |idd| %>
+	    <% if id.id == idd.answer_id %>
+	      <% @count = @count + 1%>
+	    <% end %>
+  <% end %>
+<% end %>
+
+<h1>Score : <%= @score = @count%> <h1>

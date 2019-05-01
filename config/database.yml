@@ -14,12 +14,12 @@
 #
 development:
   adapter:  postgresql
-  host:     localhost
+  host:     127.0.0.1
   encoding: unicode
   database: QuizWar_development
   pool:     5
-  username: abhilash
-  password: 
+  username: postgres
+  password: postgres
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -42,12 +42,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter:  postgresql
-  host:     localhost
+  host:     127.0.0.1
   encoding: unicode
   database: QuizWar_test
   pool:     5
-  username: abhilash
-  password: 
+  username: postgres
+  password: postgres
   template: template0
 
 production:
